@@ -1,38 +1,164 @@
+
+
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+
+body {
+	background-color: var(--back);
+}
+
 .App {
-  text-align: center;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1{
+	margin: 0px 0px 10px 0px;
+	font-size: calc(30px + 1vmin);
+	color: rgb(255, 153, 0);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+:root {
+	--primary: #f87911;
+	--secondary: #11e1e3;
+	--light: #d5d6d8;
+	--back: #313131;  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calculator {
+	width: 100%;
+	max-width: 400px;
+	background-color: #fff;
+	border-radius: 20px;
+	overflow: hidden;
+	outline: 8px solid white;
+	box-shadow: 0px 2px 64px #00000033;
+	display: flex;
+	flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.display {
   display: flex;
+	padding:  16px;
+  justify-content: right;
+	background-color: var(--light);
+	color: var(--back);
+	font-size: calc(20px + 1vmin);
+	font-weight: 350;
+	margin: 5px 5px 3px 5px;
+	border-radius: 20px;
+  height: 15%;
+  width: 400px;
+}
+
+.display span {
+	font-size: 14px;
+	color: #888;
+}
+
+button {
+	appearance: none;
+	border: none;
+	outline: none;
+	color: #472f2f;
+	font-size: calc(18px + 1vmin);;
+	padding: 16px;
+	cursor:pointer;
+	transition: 0.25s;
+	background-color: #646568;
+	margin: 5px;
+  
+}
+
+button:hover {
+	opacity: 0.9;
+}
+
+.operators {
+	display: flex;
+  width: 25%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.operators button {
+	background-color: var(--primary);
+	font-weight: 700;
+	transition: 0.4s;
+	margin: 5px 5px 0px 5px;
+	border-radius: 20px;
+  width: 80%;
+  height: 22%;
+}
+.AcDel{
+  display: flex;
+  width: fit-content;
+}
+.AcDel button {
+  background-color: var(--primary);
+	font-weight: 700;
+	transition: 0.4s;
+	margin: 5px 5px 0px 5px;
+	border-radius: 20px;
+  width: 80%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.operators button:hover {
+	background-color: #85430d;
+}
+
+.digits {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;	
+  width: 75%;
+}
+
+.digits button {
+	flex: 1 1 30%;
+	max-width: 30%;
+	background-color: var(--light);
+	transition: 0.4s;
+	margin: 5px;
+	border-radius: 10px;
+}
+
+.digits button:hover {
+	background-color: #2a2a49;
+  color: aliceblue;
+}
+
+@media only screen and (max-width: 400x){
+	.digits button {
+		max-width: 30%;
+		margin: 0px;
+		border-radius: 0px;
+	}
+	.operators button {
+		transition: 0.4s;
+		margin: 0px;
+		border-radius: 0px;
+	}
+	.display {
+		padding:  16px;
+		text-align: right;
+		margin: 0px;
+		border-radius: 0px;
+	}
+	.calculator{
+		outline: none;
+		border-radius: 16px;
+	}
 }
